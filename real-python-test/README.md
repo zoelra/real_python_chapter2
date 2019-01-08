@@ -1,1 +1,0 @@
-Hello, world! I am learning sqlite, Flask, and Sublime now!
