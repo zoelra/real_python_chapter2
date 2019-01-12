@@ -19,7 +19,7 @@ def login_required(test):
 	return wrap
 
 @app.route('/logout')
-def log():
+def logout():
 	session.pop('logged_in', None)
 	flash('Goodbye!')
 	return redirect(url_for('login'))
@@ -27,8 +27,8 @@ def log():
 @app.route('/', methods=['GET', 'POST'])
 def login():
 	if request.method == 'POST':
-		if request.form['username'] != app.config['USERNAME'] or
-			request.form['password'] != app.config['PASSWORD']:
+		if request.form['username'] != app.config['USERNAME'] \
+				or request.form['password'] != app.config['PASSWORD']:
 			error = 'Invalid Credentials. Please try again.'
 			return render_template('login.html', error=error)
 		else:
