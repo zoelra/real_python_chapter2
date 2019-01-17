@@ -86,6 +86,8 @@ def register():
             db.session.commit()
             flash('Thanks for registering. Please login.')
             return redirect(url_for('login'))
+        else:
+            flash("Your form did not pass validation.")
     return render_template('register.html', form=form, error=error)
 
 

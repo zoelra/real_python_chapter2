@@ -28,6 +28,7 @@ def login_required(test):
 			return redirect(url_for('login'))
 	return wrap
 
+
 @app.route('/', methods=['GET', 'POST'])
 def login():
 	error = None
